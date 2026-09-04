@@ -1,0 +1,66 @@
+# Jekyll + GitHub Pages configuration.
+# Theme: just-the-docs (loaded via remote_theme, so no Gemfile/local build is required —
+# GitHub's own Pages build pipeline handles this automatically on every push).
+
+title: Cloud Security & DevSecOps Journey
+description: >-
+  A working record of moving from React/TypeScript frontend development into
+  Cloud Security and DevSecOps — the roadmap, the curriculum, and the dated,
+  evidence-backed log of actually doing it.
+
+# --- Theme ---
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# --- Site URL ---
+url: "https://jumalaw98.github.io"
+baseurl: "/cloud-security-devsecops-journey"
+
+# --- Appearance ---
+color_scheme: dark
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# --- Navigation ---
+nav_sort: case_insensitive
+nav_external_links:
+  - title: Repo on GitHub
+    url: https://github.com/YOUR-jumalaw98/cloud-security-devsecops-journey
+    hide_icon: false
+    opens_in_new_tab: true
+
+# --- Search ---
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# --- Footer ---
+footer_content: "Built while learning Cloud Security & DevSecOps — evidence over course-completion."
+
+# --- What NOT to build into the site ---
+# The polished, curated pages (index/ROADMAP/CURRICULUM/skills-matrix/phase READMEs) get built.
+# The dated logs, raw evidence, and lab/project working files stay as plain repo files —
+# browsable on GitHub normally, but not part of the styled site or its nav.
+exclude:
+  - README.md
+  - DEPLOY.md
+  - weekly-notes/
+  - monthly-reviews/
+  - "phases/**/notes.md"
+  - "phases/**/articles.md"
+  - "phases/**/labs/"
+  - "phases/**/project/"
+  - "phases/**/evidence/"
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
